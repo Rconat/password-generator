@@ -23,13 +23,16 @@ var randomUppercase
 var randomLowercase
 var randomSpecial
 
-
+// on click function
 function generatePassword() {
+    //check to see if you want to make a new password
     var passPrompt = confirm('Create a new Password?');
 
   if (passPrompt) {
+    //check how many characters you want to use
     var characterCount = parseInt(prompt('Enter a number between 8 and 128'))
     console.log('the character count is ' + characterCount)
+    //check number of characters is the right amount
     if (characterCount >= 8 && characterCount <= 128) {
         // User Prompt for types of characters
          // numeric ?
@@ -41,6 +44,7 @@ function generatePassword() {
         // lowercase ?
         var includeLowers = confirm('Include lowercase numbers?')
        
+        // If no character types are selected - alert that you must choose at lease one
         while (!(includeNumbers || includeSpecial || includeUppers || includeLowers)) {
             alert("You must select at least one character type");
             return

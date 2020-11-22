@@ -48,25 +48,25 @@ function generatePassword() {
             alert("You must select at least one character type");
             return
         }
-
+        // concat the numbers to the characerPool if selected true
         if (includeNumbers === true) {
             characterPool = characterPool.concat(numbers)
         } else {
             console.log('not including numbers')
         }
-
+        // concat the uppercase letters to the characerPool if selected true
         if (includeUppers === true) {
             characterPool = characterPool.concat(uppercase)
         } else {
             console.log('not including uppers')
         }
-
+        // concat the lowercase letters to the characerPool if selected true
         if (includeLowers === true) {
             characterPool = characterPool.concat(lowercase)
         } else {
             console.log('not including lowers')
         }
-
+        // concat the special characters to the characerPool if selected true
         if (includeSpecial === true) {
             characterPool = characterPool.concat(special)
         } else {

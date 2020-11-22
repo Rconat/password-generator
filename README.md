@@ -8,10 +8,10 @@ The webpage is hosted on [GitHub](https://rconat.github.io/password-generator/).
 You can find the repo on [GitHub](https://github.com/Rconat/password-generator).
 
 ![Website Layout](main.jpg)
-![Prompt 1](prompt1.jpg)
-![Prompt 2](prompt2.jpg)
-![Prompt 3](prompt3.jpg)
-![Password Generated](password.jpg)
+![Prompt](prompt.jpg)
+![Prompt 2](prompt1.jpg)
+![Prompt 3](prompt2.jpg)
+![Password Generated](passwordcomplete.jpg)
 
 ## Table of Contents
 

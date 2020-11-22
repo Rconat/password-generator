@@ -21,11 +21,11 @@ var includeUpper
 var includeLower
 var includeSpecial
 
-var randomNumber = ''
-var randomUpper = ''
-var randomLower = ''
-var randomSpec = ''
-var randomArray = []
+// var randomNumber = ''
+// var randomUpper = ''
+// var randomLower = ''
+// var randomSpec = ''
+// var randomArray = []
 
 // on click function
 function generatePassword() {
@@ -39,7 +39,7 @@ function generatePassword() {
     //check number of characters is the right amount
     if (characterCount >= 8 && characterCount <= 128) {
         // User Prompt for types of characters
-         // numeric ?
+        // numeric ?
         var includeNumbers = confirm('Include numbers?')
         // special characters ?
         var includeSpecial = confirm('Include special characters?')
@@ -89,15 +89,17 @@ function generatePassword() {
   } else {
       return
   }
+  console.log(finalPassword)
 }
 
 
 //function to get random password
 function randomPassword() {
-    for (var i = 0; i < characterCount; i++); {
-        finalPassword = characterPool[Math.floor(Math.random(i) * characterPool.length)]
-        console.log(finalPassword)
+    for (var i = 0; i < characterCount; i++) {
+        finalPassword += characterPool[Math.floor(Math.random(i) * characterPool.length)]
     }
+// console.log(finalPassword)
+return finalPassword
 }
 
 // //function to get a random numbers

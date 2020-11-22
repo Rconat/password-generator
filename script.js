@@ -21,6 +21,7 @@ var includeSpecial
 
 // on click function
 function generatePassword() {
+    characterPool = []
     finalPassword = ''
     writePassword()
     //check to see if you want to make a new password
@@ -50,28 +51,24 @@ function generatePassword() {
 
         if (includeNumbers === true) {
             characterPool = characterPool.concat(numbers)
-            // randomNumbers()
         } else {
             console.log('not including numbers')
         }
 
         if (includeUppers === true) {
             characterPool = characterPool.concat(uppercase)
-            // randomUppers()
         } else {
             console.log('not including uppers')
         }
 
         if (includeLowers === true) {
             characterPool = characterPool.concat(lowercase)
-            // randomLowers()
         } else {
             console.log('not including lowers')
         }
 
         if (includeSpecial === true) {
             characterPool = characterPool.concat(special)
-            // randomSpecial()
         } else {
             console.log('not including special characters')
         }

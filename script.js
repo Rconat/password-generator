@@ -76,7 +76,7 @@ function generatePassword() {
     writePassword()
   } else {
       return
-  }
+    }
   console.log(finalPassword)
 }
 

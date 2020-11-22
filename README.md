@@ -17,7 +17,6 @@ You can find the repo on [GitHub](https://github.com/Rconat/password-generator).
 
 * [List of Files](#List-of-Files)
 * [Usage](#usage)
-* [Credits](#credits)
 
 ## List of Files
 

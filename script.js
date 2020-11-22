@@ -21,13 +21,14 @@ var includeSpecial
 
 // on click function
 function generatePassword() {
-    characterPool = []
-    finalPassword = ''
-    writePassword()
     //check to see if you want to make a new password
     var passPrompt = confirm('Create a new Password?');
 
   if (passPrompt) {
+    //clear the characterPool/finalPassword only after they want to make a new password prompt
+    characterPool = []
+    finalPassword = ''
+    writePassword()
     //check how many characters you want to use
     characterCount = parseInt(prompt('Enter a number between 8 and 128'))
     console.log('the character count is ' + characterCount)
@@ -77,11 +78,11 @@ function generatePassword() {
     } else {
         alert ("Password must be between 8 and 128 characters")
     }
+    writePassword()
   } else {
       return
   }
-  writePassword()
-//   console.log(finalPassword)
+  console.log(finalPassword)
 }
 
 

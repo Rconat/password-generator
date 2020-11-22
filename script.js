@@ -10,6 +10,9 @@ var uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 var lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var special = ['#', '$', '%', '&', '(', ')', '*', '+', '<', '-', '.', '/', ':', ';', '<', '=', '>', '?', '!', '@', '[', ']'];
 
+var characterCount;
+var characterPool = []
+
 var finalPassArray = []
 var finalPassword = ''
 
@@ -31,7 +34,7 @@ function generatePassword() {
 
   if (passPrompt) {
     //check how many characters you want to use
-    var characterCount = parseInt(prompt('Enter a number between 8 and 128'))
+    characterCount = parseInt(prompt('Enter a number between 8 and 128'))
     console.log('the character count is ' + characterCount)
     //check number of characters is the right amount
     if (characterCount >= 8 && characterCount <= 128) {
@@ -52,73 +55,87 @@ function generatePassword() {
         }
 
         if (includeNumbers === true) {
-            randomNumbers()
+            characterPool = characterPool.concat(numbers)
+            // randomNumbers()
         } else {
             console.log('not including numbers')
         }
 
         if (includeUppers === true) {
-            randomUppers()
+            characterPool = characterPool.concat(uppercase)
+            // randomUppers()
         } else {
             console.log('not including uppers')
         }
 
         if (includeLowers === true) {
-            randomLowers()
+            characterPool = characterPool.concat(lowercase)
+            // randomLowers()
         } else {
             console.log('not including lowers')
         }
 
         if (includeSpecial === true) {
-            randomSpecial()
+            characterPool = characterPool.concat(special)
+            // randomSpecial()
         } else {
             console.log('not including special characters')
         }
-
+        randomPassword()
+        // console.log(characterPool)
     } else {
         alert ("Password must be between 8 and 128 characters")
     }
   } else {
       return
   }
-  console.log(randomNumber, randomUpper, randomLower, randomSpec)
 }
 
-//function to get a random numbers
-function randomNumbers() {
-    for (var i = 0; i < numbers.length; i++); {
-        randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-        // console.log(randomNumber)
-        return randomNumber
+
+//function to get random password
+function randomPassword() {
+    for (var i = 0; i < characterCount; i++); {
+        finalPassword = characterPool[Math.floor(Math.random(i) * characterPool.length)]
+        console.log(finalPassword)
     }
 }
 
-//function to get random uppercase letters
-function randomUppers() {
-    for (var i = 0; i < uppercase.length; i++); {
-        randomUpper = uppercase[Math.floor(Math.random() * uppercase.length)];
-        // console.log(randomUpper)
-        return randomUpper
-    }
-}
+// //function to get a random numbers
+// function randomNumbers() {
+//     for (var i = 0; i < numbers.length; i++); {
+//         randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+//         // console.log(randomNumber)
+//         return randomNumber
+//     }
+// }
 
-//function to get random lowercase letters
-function randomLowers() {
-    for (var i = 0; i < lowercase.length; i++); {
-        randomLower = lowercase[Math.floor(Math.random() * lowercase.length)];
-        // console.log(randomLower)
-        return randomLower
-    }
-}
+// //function to get random uppercase letters
+// function randomUppers() {
+//     for (var i = 0; i < uppercase.length; i++); {
+//         randomUpper = uppercase[Math.floor(Math.random() * uppercase.length)];
+//         // console.log(randomUpper)
+//         return randomUpper
+//     }
+// }
 
-//function to get random special characters
-function randomSpecial() {
-    for (var i = 0; i < special.length; i++); {
-        randomSpec = special[Math.floor(Math.random() * special.length)];
-        // console.log(randomSpec)
-        return randomSpec
-    }
-}
+// //function to get random lowercase letters
+// function randomLowers() {
+//     for (var i = 0; i < lowercase.length; i++); {
+//         randomLower = lowercase[Math.floor(Math.random() * lowercase.length)];
+//         // console.log(randomLower)
+//         return randomLower
+//     }
+// }
+
+// //function to get random special characters
+// function randomSpecial() {
+//     for (var i = 0; i < special.length; i++); {
+//         randomSpec = special[Math.floor(Math.random() * special.length)];
+//         // console.log(randomSpec)
+//         return randomSpec
+//     }
+// }
+
 
 // Write password to the #password input
 // function writePassword() {

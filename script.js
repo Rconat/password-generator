@@ -12,8 +12,6 @@ var special = ['#', '$', '%', '&', '(', ')', '*', '+', '<', '-', '.', '/', ':', 
 
 var characterCount;
 var characterPool = []
-
-var finalPassArray = []
 var finalPassword = ''
 
 var includeNumbers
@@ -29,6 +27,8 @@ var includeSpecial
 
 // on click function
 function generatePassword() {
+    finalPassword = ''
+    writePassword()
     //check to see if you want to make a new password
     var passPrompt = confirm('Create a new Password?');
 
@@ -89,7 +89,8 @@ function generatePassword() {
   } else {
       return
   }
-  console.log(finalPassword)
+  writePassword()
+//   console.log(finalPassword)
 }
 
 
@@ -98,52 +99,10 @@ function randomPassword() {
     for (var i = 0; i < characterCount; i++) {
         finalPassword += characterPool[Math.floor(Math.random(i) * characterPool.length)]
     }
-// console.log(finalPassword)
-return finalPassword
 }
 
-// //function to get a random numbers
-// function randomNumbers() {
-//     for (var i = 0; i < numbers.length; i++); {
-//         randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-//         // console.log(randomNumber)
-//         return randomNumber
-//     }
-// }
-
-// //function to get random uppercase letters
-// function randomUppers() {
-//     for (var i = 0; i < uppercase.length; i++); {
-//         randomUpper = uppercase[Math.floor(Math.random() * uppercase.length)];
-//         // console.log(randomUpper)
-//         return randomUpper
-//     }
-// }
-
-// //function to get random lowercase letters
-// function randomLowers() {
-//     for (var i = 0; i < lowercase.length; i++); {
-//         randomLower = lowercase[Math.floor(Math.random() * lowercase.length)];
-//         // console.log(randomLower)
-//         return randomLower
-//     }
-// }
-
-// //function to get random special characters
-// function randomSpecial() {
-//     for (var i = 0; i < special.length; i++); {
-//         randomSpec = special[Math.floor(Math.random() * special.length)];
-//         // console.log(randomSpec)
-//         return randomSpec
-//     }
-// }
-
-
 // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
+function writePassword() {
+  var passwordText = document.querySelector("#password");
+  passwordText.value = finalPassword;
+}

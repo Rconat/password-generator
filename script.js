@@ -14,10 +14,10 @@ var characterCount;
 var characterPool = []
 var finalPassword = ''
 
-var includeNumbers
-var includeUpper
-var includeLower
-var includeSpecial
+// var includeNumbers
+// var includeUpper
+// var includeLower
+// var includeSpecial
 
 // on click function
 function generatePassword() {

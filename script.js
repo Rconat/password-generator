@@ -14,18 +14,13 @@ var characterCount;
 var characterPool = []
 var finalPassword = ''
 
-// var includeNumbers
-// var includeUpper
-// var includeLower
-// var includeSpecial
-
 // on click function
 function generatePassword() {
     //check to see if you want to make a new password
     var passPrompt = confirm('Create a new Password?');
 
   if (passPrompt) {
-    //clear the characterPool/finalPassword only after they want to make a new password prompt
+    //clear the characterPool/finalPassword only after they want to make a new password prompt - this insures password stays if you hit cancel
     characterPool = []
     finalPassword = ''
     writePassword()

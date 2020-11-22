@@ -18,10 +18,10 @@ var includeUpper
 var includeLower
 var includeSpecial
 
-var randomNumbers
-var randomUppercase
-var randomLowercase
-var randomSpecial
+var randomNumber
+var randomUpper
+var randomLower
+var randomSpec
 
 // on click function
 function generatePassword() {
@@ -51,27 +51,27 @@ function generatePassword() {
         }
 
         if (includeNumbers === true) {
-            console.log('including numbers')
+            randomNumbers()
         } else {
             console.log('not including numbers')
         }
 
-        if (includeSpecial === true) {
-            console.log('including special characters')
-        } else {
-            console.log('not including special characters')
-        }
-
         if (includeUppers === true) {
-            console.log('including uppers')
+            randomUppers()
         } else {
             console.log('not including uppers')
         }
 
         if (includeLowers === true) {
-            console.log('including lowers')
+            randomLowers()
         } else {
             console.log('not including lowers')
+        }
+
+        if (includeSpecial === true) {
+            randomSpecial()
+        } else {
+            console.log('not including special characters')
         }
 
     } else {
@@ -80,6 +80,38 @@ function generatePassword() {
   } else {
       return
   }
+}
+
+//function to get a random numbers
+function randomNumbers() {
+    for (var i = 0; i < numbers.length; i++); {
+        randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+        console.log(randomNumber)
+    }
+}
+
+//function to get random uppercase letters
+function randomUppers() {
+    for (var i = 0; i < uppercase.length; i++); {
+        randomUpper = uppercase[Math.floor(Math.random() * uppercase.length)];
+        console.log(randomUpper)
+    }
+}
+
+//function to get random lowercase letters
+function randomLowers() {
+    for (var i = 0; i < lowercase.length; i++); {
+        randomLower = lowercase[Math.floor(Math.random() * lowercase.length)];
+        console.log(randomLower)
+    }
+}
+
+//function to get random special characters
+function randomSpecial() {
+    for (var i = 0; i < special.length; i++); {
+        randomSpec = special[Math.floor(Math.random() * special.length)];
+        console.log(randomSpec)
+    }
 }
 
 // Write password to the #password input

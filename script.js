@@ -19,12 +19,6 @@ var includeUpper
 var includeLower
 var includeSpecial
 
-// var randomNumber = ''
-// var randomUpper = ''
-// var randomLower = ''
-// var randomSpec = ''
-// var randomArray = []
-
 // on click function
 function generatePassword() {
     finalPassword = ''

@@ -18,10 +18,11 @@ var includeUpper
 var includeLower
 var includeSpecial
 
-var randomNumber
-var randomUpper
-var randomLower
-var randomSpec
+var randomNumber = ''
+var randomUpper = ''
+var randomLower = ''
+var randomSpec = ''
+var randomArray = []
 
 // on click function
 function generatePassword() {
@@ -43,7 +44,7 @@ function generatePassword() {
         var includeUppers = confirm('Include uppercase numbers?')
         // lowercase ?
         var includeLowers = confirm('Include lowercase numbers?')
-       
+
         // If no character types are selected - alert that you must choose at lease one
         while (!(includeNumbers || includeSpecial || includeUppers || includeLowers)) {
             alert("You must select at least one character type");
@@ -80,13 +81,15 @@ function generatePassword() {
   } else {
       return
   }
+  console.log(randomNumber, randomUpper, randomLower, randomSpec)
 }
 
 //function to get a random numbers
 function randomNumbers() {
     for (var i = 0; i < numbers.length; i++); {
         randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-        console.log(randomNumber)
+        // console.log(randomNumber)
+        return randomNumber
     }
 }
 
@@ -94,7 +97,8 @@ function randomNumbers() {
 function randomUppers() {
     for (var i = 0; i < uppercase.length; i++); {
         randomUpper = uppercase[Math.floor(Math.random() * uppercase.length)];
-        console.log(randomUpper)
+        // console.log(randomUpper)
+        return randomUpper
     }
 }
 
@@ -102,7 +106,8 @@ function randomUppers() {
 function randomLowers() {
     for (var i = 0; i < lowercase.length; i++); {
         randomLower = lowercase[Math.floor(Math.random() * lowercase.length)];
-        console.log(randomLower)
+        // console.log(randomLower)
+        return randomLower
     }
 }
 
@@ -110,7 +115,8 @@ function randomLowers() {
 function randomSpecial() {
     for (var i = 0; i < special.length; i++); {
         randomSpec = special[Math.floor(Math.random() * special.length)];
-        console.log(randomSpec)
+        // console.log(randomSpec)
+        return randomSpec
     }
 }
 
